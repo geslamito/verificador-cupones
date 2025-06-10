@@ -4,13 +4,19 @@ function checkCoupon() {
   const code = document.getElementById('coupon-code').value.trim();
   const result = document.getElementById('result');
   result.textContent = "Verificando...";
-  
+  result.style.color = "#000";
+  result.style.fontWeight = "normal";
+
   fetch(`${SCRIPT_URL}?code=${code}`)
     .then(response => response.json())
     .then(data => {
       result.textContent = data.message;
+      result.style.color = data.color;
+      result.style.fontWeight = "bold";
+      result.style.fontSize = "1.2rem";
     })
     .catch(error => {
-      result.textContent = "Hubo un error al verificar el cupón.";
+      result.textContent = "❌ Error al verificar el cupón.";
+      result.style.color = "red";
     });
 }
