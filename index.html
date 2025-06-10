@@ -14,6 +14,12 @@
       margin: 0;
     }
 
+    img.logo {
+      max-width: 300px;
+      height: auto;
+      margin-bottom: 2rem;
+    }
+
     h1 {
       color: #333;
       margin-bottom: 1.5rem;
@@ -47,6 +53,8 @@
   <script defer src="script.js"></script>
 </head>
 <body>
+  <img src="logo_geslama_600x250.png" alt="Grupo Geslama" class="logo" />
+
   <h1>Validador de Cupones</h1>
   <input type="text" id="coupon-code" placeholder="Introduce el código" />
   <button onclick="checkCoupon()">Verificar</button>
